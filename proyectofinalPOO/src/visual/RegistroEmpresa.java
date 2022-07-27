@@ -8,7 +8,12 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
+import logico.BolsaUbicacion;
+import logico.Empresa;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -18,12 +23,13 @@ import javax.swing.UIManager;
 public class RegistroEmpresa extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
+	private JTextField textID;
+	private JTextField textNombre;
+	private JTextField textDireccion;
+	private JTextField textTelefono;
+	private JTextField textRNC;
+	private JTextField textDescripcion;
+	private JTextField textPresupuesto;
 
 	/**
 	 * Launch the application.
@@ -86,52 +92,80 @@ public class RegistroEmpresa extends JDialog {
 				panel.add(lblNewLabel_5);
 			}
 			{
-				textField = new JTextField();
-				textField.setBounds(118, 49, 158, 22);
-				panel.add(textField);
-				textField.setColumns(10);
+				textID = new JTextField();
+				textID.setBounds(118, 49, 158, 22);
+				panel.add(textID);
+				textID.setColumns(10);
 			}
 			{
-				textField_1 = new JTextField();
-				textField_1.setColumns(10);
-				textField_1.setBounds(118, 100, 158, 22);
-				panel.add(textField_1);
+				textNombre = new JTextField();
+				textNombre.setColumns(10);
+				textNombre.setBounds(118, 100, 158, 22);
+				panel.add(textNombre);
 			}
 			{
-				textField_2 = new JTextField();
-				textField_2.setColumns(10);
-				textField_2.setBounds(118, 159, 158, 22);
-				panel.add(textField_2);
+				textDireccion = new JTextField();
+				textDireccion.setColumns(10);
+				textDireccion.setBounds(118, 159, 158, 22);
+				panel.add(textDireccion);
 			}
 			{
-				textField_3 = new JTextField();
-				textField_3.setColumns(10);
-				textField_3.setBounds(118, 217, 158, 22);
-				panel.add(textField_3);
+				textTelefono = new JTextField();
+				textTelefono.setColumns(10);
+				textTelefono.setBounds(118, 217, 158, 22);
+				panel.add(textTelefono);
 			}
 			{
-				textField_4 = new JTextField();
-				textField_4.setColumns(10);
-				textField_4.setBounds(118, 277, 158, 22);
-				panel.add(textField_4);
+				textRNC = new JTextField();
+				textRNC.setColumns(10);
+				textRNC.setBounds(118, 277, 158, 22);
+				panel.add(textRNC);
 			}
 			{
-				textField_5 = new JTextField();
-				textField_5.setColumns(10);
-				textField_5.setBounds(118, 325, 178, 103);
-				panel.add(textField_5);
+				textDescripcion = new JTextField();
+				textDescripcion.setForeground(new Color(255, 255, 255));
+				textDescripcion.setBackground(new Color(0, 0, 139));
+				textDescripcion.setColumns(10);
+				textDescripcion.setBounds(118, 325, 178, 103);
+				panel.add(textDescripcion);
 			}
 			{
 				JPanel panel_1 = new JPanel();
 				panel_1.setBackground(Color.WHITE);
-				panel_1.setBounds(12, 28, 339, 415);
+				panel_1.setBounds(12, 28, 515, 415);
 				panel.add(panel_1);
-			}
-			{
-				JButton btnNewButton = new JButton("Registrar");
-				btnNewButton.setBackground(Color.WHITE);
-				btnNewButton.setBounds(374, 397, 97, 25);
-				panel.add(btnNewButton);
+				panel_1.setLayout(null);
+				{
+					JButton btnNewButton = new JButton("Registrar");
+					btnNewButton.setBounds(330, 350, 95, 25);
+					panel_1.add(btnNewButton);
+					btnNewButton.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							Empresa aux = new Empresa(textID.getText(), textNombre.getText(), textDireccion.getText(),textTelefono.getText() ,textRNC.getText(), textDescripcion.getText(), Integer.parseInt(textPresupuesto.getText()));
+							BolsaUbicacion.getInstance().AddEmpresa(aux);
+							JOptionPane.showMessageDialog(getContentPane(), "Exitoso");
+							textNombre.setText("");
+							textDescripcion.setText("");
+							textDireccion.setText("");
+							textID.setText("");
+							textPresupuesto.setText("");
+							textRNC.setText("");
+							textTelefono.setText("");
+						}
+					});
+					btnNewButton.setBackground(Color.WHITE);
+				}
+				{
+					JLabel lblNewLabel_6 = new JLabel("Presupuesto Anual:");
+					lblNewLabel_6.setBounds(316, 43, 136, 16);
+					panel_1.add(lblNewLabel_6);
+				}
+				{
+					textPresupuesto = new JTextField();
+					textPresupuesto.setColumns(10);
+					textPresupuesto.setBounds(294, 84, 158, 22);
+					panel_1.add(textPresupuesto);
+				}
 			}
 			{
 				JButton btnNewButton_1 = new JButton("Volver");

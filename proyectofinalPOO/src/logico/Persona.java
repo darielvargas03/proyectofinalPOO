@@ -9,15 +9,12 @@ public class Persona {
 	protected String Telefono;
 	protected String email;
 	protected String Institucion;
-	protected Date fechanacimiento;
 	protected char genero;
 	protected String Campodetrabajo;
 	protected boolean Profesional;
 	protected int Salariobase;
-	protected String EstadoCivil;
-	public Persona(String cedula, String nombre, String apellido, String telefono, String email, String institucion,
-			Date fechanacimiento, char genero, String campodetrabajo, boolean profesional, int salariobase,
-			String estadoCivil) {
+	public Persona(String cedula, String nombre, String apellido, String telefono, String email, char genero, String campodetrabajo, boolean profesional, int salariobase,
+			String institucion) {
 		super();
 		Cedula = cedula;
 		this.nombre = nombre;
@@ -25,12 +22,10 @@ public class Persona {
 		Telefono = telefono;
 		this.email = email;
 		Institucion = institucion;
-		this.fechanacimiento = fechanacimiento;
 		this.genero = genero;
 		Campodetrabajo = campodetrabajo;
 		Profesional = profesional;
 		Salariobase = 0;
-		EstadoCivil = estadoCivil;
 	}
 	public String getCedula() {
 		return Cedula;
@@ -68,12 +63,7 @@ public class Persona {
 	public void setInstitucion(String institucion) {
 		Institucion = institucion;
 	}
-	public Date getFechanacimiento() {
-		return fechanacimiento;
-	}
-	public void setFechanacimiento(Date fechanacimiento) {
-		this.fechanacimiento = fechanacimiento;
-	}
+
 	public char getGenero() {
 		return genero;
 	}
@@ -98,11 +88,6 @@ public class Persona {
 	public void setSalariobase(int salariobase) {
 		Salariobase = salariobase;
 	}
-	public String getEstadoCivil() {
-		return EstadoCivil;
-	}
-	public void setEstadoCivil(String estadoCivil) {
-		EstadoCivil = estadoCivil;
-	}
 	
 }
+

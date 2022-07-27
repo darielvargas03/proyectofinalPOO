@@ -7,27 +7,20 @@ public class Empresa {
 	private String nombre;
 	private String direccion;
 	private String Telefono;
-	private int  RNC;
+	private String  RNC;
 	private String descripcion;
 	private int presupuestoAnual;
-	private int cantmaxempleador;
-	private int cantempresas;
-	private String Gerentes;
-	private String Departamentos;
-	public Empresa(String id, String nombre, String direccion, String telefono, int rNC, String descripcion,
-			int presupuestoAnual, int cantmaxempleador, int cantempresas, String gerentes, String departamentos) {
+	public Empresa(String id, String nombre, String direccion, String telefono, String RNC, String descripcion,
+			int presupuestoAnual) {
 		super();
 		Id = id;
 		this.nombre = nombre;
 		this.direccion = direccion;
 		Telefono = telefono;
-		RNC = 000-00000-(0);
+		this.RNC = RNC;
 		this.descripcion = descripcion;
 		this.presupuestoAnual = presupuestoAnual;
-		this.cantmaxempleador = 20;
-		this.cantempresas = 100;
-		Gerentes = gerentes;
-		Departamentos = departamentos;
+		
 	}
 	public String getId() {
 		return Id;
@@ -53,11 +46,11 @@ public class Empresa {
 	public void setTelefono(String telefono) {
 		Telefono = telefono;
 	}
-	public int getRNC() {
+	public String getRNC() {
 		return RNC;
 	}
-	public void setRNC(int rNC) {
-		RNC = rNC;
+	public void setRNC(String RNC) {
+		this.RNC = RNC;
 	}
 	public String getDescripcion() {
 		return descripcion;
@@ -71,31 +64,5 @@ public class Empresa {
 	public void setPresupuestoAnual(int presupuestoAnual) {
 		this.presupuestoAnual = presupuestoAnual;
 	}
-	public int getCantmaxempleador() {
-		return cantmaxempleador;
-	}
-	public void setCantmaxempleador(int cantmaxempleador) {
-		this.cantmaxempleador = cantmaxempleador;
-	}
-	public int getCantempresas() {
-		return cantempresas;
-	}
-	public void setCantempresas(int cantempresas) {
-		this.cantempresas = cantempresas;
-	}
-	public String getGerentes() {
-		return Gerentes;
-	}
-	public void setGerentes(String gerentes) {
-		Gerentes = gerentes;
-	}
-	public String getDepartamentos() {
-		return Departamentos;
-	}
-	public void setDepartamentos(String departamentos) {
-		Departamentos = departamentos;
-	}
-	
-	
 
 }

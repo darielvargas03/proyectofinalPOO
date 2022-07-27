@@ -8,10 +8,10 @@ public class Tecnico extends Persona {
        private int cantTecnico;
        private String nombreInstitucion;
        
-	public Tecnico(String cedula, String nombre, String apellido, String telefono, String email, String institucion,
-			Date fechanacimiento, char genero, String campodetrabajo, boolean profesional, int salariobase,
-			String estadoCivil,String tipoTecnico, int cantTecnico,String nombreInstitucion) {
-		super(cedula, nombre, apellido, telefono, email, institucion, fechanacimiento, genero, campodetrabajo, profesional,
+	public Tecnico(String cedula, String nombre, String apellido, String telefono, String email,
+			 char genero, String campodetrabajo, boolean profesional, int salariobase,
+			String estadoCivil,String tipoTecnico,String nombreInstitucion) {
+		super(cedula, nombre, apellido, telefono, email, genero, campodetrabajo, profesional,
 				salariobase, estadoCivil);
 		this.tipoTecnico = tipoTecnico;
 		this.cantTecnico = 0;

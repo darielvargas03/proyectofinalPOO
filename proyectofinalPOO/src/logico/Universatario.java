@@ -6,9 +6,9 @@ public class Universatario extends Persona {
 	private String Carrera;
 
 	public Universatario(String cedula, String nombre, String apellido, String telefono, String email,
-			String institucion, Date fechanacimiento, char genero, String campodetrabajo, boolean profesional,
+			  char genero, String campodetrabajo, boolean profesional,
 			int salariobase, String estadoCivil,String carrera) {
-		super(cedula, nombre, apellido, telefono, email, institucion, fechanacimiento, genero, campodetrabajo, profesional,
+		super(cedula, nombre, apellido, telefono, email, genero, campodetrabajo, profesional,
 				salariobase, estadoCivil);
 		this.Carrera = carrera;
 	}
